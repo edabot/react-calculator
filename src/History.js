@@ -13,7 +13,7 @@ class History extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="history">
         { this.showHistory() }
       </div>
     );
@@ -29,7 +29,7 @@ class HistoryItem extends Component {
     render() {
         return (
             <div className='line-item'>
-                { this.props.item.operator + ' ' + this.props.item.number + ' '}
+                { this.props.item.operator + ' ' + this.props.item.number}
                 <span className='item-delete' onClick={this.removeItem.bind(this)}>x</span>
             </div>
         )

@@ -4,13 +4,34 @@ body {
   font-family: sans-serif;
 }
 
+
+.calculator {
+    width: 70%;
+    max-width: 500px;
+    margin: 0 auto;
+    font-size: 24px;
+    text-align: right;
+}
+
 .results {
     margin-top: 10px;
+}
+
+.input {
+    background-color: white;
+    border: 1px solid lightgray;
+    padding-right: 5px;
+}
+
+.history {
+    margin-right: -20px;
 }
 
 .line-item {
     margin-top: 3px;
     margin-bottom: 3px;
+    color: #444;
+    text-align: right;
 }
 
 .item-delete {
@@ -18,6 +39,9 @@ body {
     padding: 0 5px 2px 5px;
     border-radius: 10px;
     color: white;
-    font-size: .8em;
+    font-size: .6em;
     cursor: pointer;
+    position: relative;
+    bottom: 4px;
+    margin-left: 8px;
 }

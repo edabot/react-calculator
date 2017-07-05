@@ -10,7 +10,7 @@ class InputDisplay extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="input">
        { this.combinedInput() }
       </div>
     );
