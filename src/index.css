@@ -7,3 +7,17 @@ body {
 .results {
     margin-top: 10px;
 }
+
+.line-item {
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.item-delete {
+    background-color: lightgrey;
+    padding: 0 5px 2px 5px;
+    border-radius: 10px;
+    color: white;
+    font-size: .8em;
+    cursor: pointer;
+}

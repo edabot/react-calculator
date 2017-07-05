@@ -28,9 +28,9 @@ class HistoryItem extends Component {
 
     render() {
         return (
-            <div>
-                { this.props.item.operator + ' ' + this.props.item.number}
-                <span onClick={this.removeItem.bind(this)}> x</span>
+            <div className='line-item'>
+                { this.props.item.operator + ' ' + this.props.item.number + ' '}
+                <span className='item-delete' onClick={this.removeItem.bind(this)}>x</span>
             </div>
         )
     }
