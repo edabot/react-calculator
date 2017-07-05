@@ -6,9 +6,7 @@ class History extends Component {
     showHistory() {
         return this.props.history.map( item => {
             return (
-                <div key={item.number}>
-                    { item.operator + ' ' + item.number }
-                </div>
+                <HistoryItem key={item.id} removeItem={this.props.removeItem} item={item} />
             )
         })
     }
@@ -20,6 +18,22 @@ class History extends Component {
       </div>
     );
   }
+}
+
+class HistoryItem extends Component {
+
+    removeItem() {
+        this.props.removeItem(this.props.item.id)
+    }
+
+    render() {
+        return (
+            <div>
+                { this.props.item.operator + ' ' + this.props.item.number}
+                <span onClick={this.removeItem.bind(this)}> x</span>
+            </div>
+        )
+    }
 }
 
 export default History;

@@ -13,7 +13,8 @@ class Calculator extends Component {
         this.state = {
             history: [],
             currentInput: '',
-            operator: ''
+            operator: '',
+            counter: 0
         }
     }
 
@@ -22,9 +23,9 @@ class Calculator extends Component {
     }
 
     handleOperator( operator ) {
-        let historyItem = { operator: this.state.operator, number: this.state.currentInput}
+        let historyItem = { operator: this.state.operator, number: this.state.currentInput, id: this.state.counter}
         let newHistory = this.state.history.concat([historyItem]);
-        this.setState({history: newHistory, currentInput: '', operator: operator})
+        this.setState({history: newHistory, currentInput: '', operator: operator, counter: this.state.counter + 1 })
     }
 
     inputDot() {
@@ -38,6 +39,11 @@ class Calculator extends Component {
         if ( length > 0 ) {
             this.setState({ currentInput: this.state.currentInput.substring(0, length - 1)})
         }
+    }
+
+    removeItem( id ) {
+        let editedHistory = this.state.history.filter( item => { return item.id !== id } )
+        this.setState({history: editedHistory})
     }
 
     handleKeyDown(event) {
@@ -84,7 +90,7 @@ class Calculator extends Component {
   render() {
     return (
       <div className="App">
-        <History history={this.state.history}/>
+        <History history={this.state.history} removeItem={this.removeItem.bind(this)}/>
         <InputDisplay currentInput={ this.state.currentInput } operator={this.state.operator}/>
         <div className="results">
         { this.calculateTotal(this.state.history) }
