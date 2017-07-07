@@ -4,11 +4,10 @@ body {
   font-family: sans-serif;
 }
 
-
 .calculator {
     width: 70%;
     max-width: 500px;
-    margin: 0 auto;
+    margin: 70px auto 0 auto;
     font-size: 24px;
     text-align: right;
 }
@@ -30,7 +29,7 @@ body {
 .line-item {
     margin-top: 3px;
     margin-bottom: 3px;
-    color: #444;
+    color: #555;
     text-align: right;
 }
 
@@ -44,4 +43,8 @@ body {
     position: relative;
     bottom: 4px;
     margin-left: 8px;
+}
+
+.results {
+    color: green;
 }
